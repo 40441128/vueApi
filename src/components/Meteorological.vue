@@ -76,7 +76,8 @@ export default {
         let oldSelectList = this.weather_data.filter((value, index, arrSelf) => value.locationName === this.selectName)
         console.log('oldSelectList = ', oldSelectList)
         // 深層拷貝
-        let selectList = Object.assign([], oldSelectList)
+        // let selectList = Object.assign([], oldSelectList)
+        let selectList = JSON.parse(JSON.stringify(oldSelectList))
         console.log('selectList = ', selectList)
         selectList.forEach((item, index, array) => {
           console.log(item.locationName)
